@@ -46,7 +46,7 @@ void basicMemcpyToDevice(void) {
   memset(hA, 1, size);
   err = cudaMemcpy(dA, hA, size, cudaMemcpyHostToDevice);
   if (err != cudaSuccess) {
-   printf("cudaMemcpy failed during %s, err = %d\n", __func__, err);
+    printf("cudaMemcpy failed during %s", __func__);
     return;
   }
 }
@@ -58,7 +58,7 @@ void basicMemcpyFromDevice(void) {
 
   err = cudaMemcpy(hOut, dA, size, cudaMemcpyDeviceToHost);
   if (err != cudaSuccess) {
-    printf("cudaMemcpy failed during %s, err = %d\n", __func__, err);
+    printf("cudaMemcpy failed during %s", __func__);
     return;
   }
 
@@ -76,7 +76,7 @@ __global__ void square(float* A, int N) {
 
 void playground(void) {
   // Add your experimental CUDA implementation here.
-  basicMemcpyToDevice();
+  basicMemcpyFromDevice();
   compute();
   basicMemcpyFromDevice();
 }
