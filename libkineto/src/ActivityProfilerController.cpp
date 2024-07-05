@@ -70,8 +70,9 @@ ActivityProfilerController::ActivityProfilerController(
 }
 
 ActivityProfilerController::~ActivityProfilerController() {
-  configLoader_.removeHandler(
-      ConfigLoader::ConfigKind::ActivityProfiler, this);
+  printf("In ~ActivityProfilerController \n");
+  //configLoader_.removeHandler(
+  //    ConfigLoader::ConfigKind::ActivityProfiler, this);
   if (profilerThread_) {
     // signaling termination of the profiler loop
     stopRunloop_ = true;

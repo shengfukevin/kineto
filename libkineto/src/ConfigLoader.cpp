@@ -168,7 +168,7 @@ void ConfigLoader::stopThread() {
   if (updateThread_) {
     stopFlag_ = true;
     {
-      std::lock_guard<std::mutex> lock(updateThreadMutex_);
+      //std::lock_guard<std::mutex> lock(updateThreadMutex_);
       updateThreadCondVar_.notify_one();
     }
     updateThread_->join();
