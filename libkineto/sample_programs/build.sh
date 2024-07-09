@@ -22,6 +22,6 @@ g++ \
   -lcudart \
   -fsanitize=thread \
   /home/shengfu/local/kineto/libkineto/build/libkineto.a \
-  /usr/local/cuda/lib64/libcupti.so \
-  /usr/local/cuda/lib64/libnvperf_host.so \
+  /usr/local/cuda/extras/CUPTI/lib64/libcupti.so \
+  /usr/local/cuda/extras/CUPTI/lib64/libnvperf_host.so \
   kplay_cu.o
